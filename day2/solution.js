@@ -28,3 +28,22 @@ const uniqueThriceArray = [...new Set(thriceArray)];
 
 const checksum = uniqueTwiceArray.length * uniqueThriceArray.length;
 console.log(`The checksum is ${checksum}!`);
+
+let commonLetters = '';
+
+ids.forEach(id => {
+  ids.forEach(otherId => {
+    let commonLettersArray = [];
+    for (let i = 0; i < id.length; i++) {
+      if (id[i] === otherId[i]) {
+        commonLettersArray.push(id[i]);
+      }
+    }
+    if (commonLettersArray.length === id.length-1) {
+      commonLetters = (commonLettersArray.join(''));
+      return;
+    }
+  })
+});
+
+console.log(`The common letters are ${commonLetters}`);
